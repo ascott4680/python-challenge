@@ -34,7 +34,7 @@ with open(pybankcsv, 'r') as csvfile:
         monthcount = monthcount +1
 
         #--Set previous sum so I can find the difference
-        prevtotal = total
+        prevtotal = total - prevtotal
 
         #--Sum totals
         total += int(row[1])
@@ -45,7 +45,7 @@ with open(pybankcsv, 'r') as csvfile:
 
 
         #--revenue change
-        change = total - prevtotal
+        #change = total - prevtotal
 
 
 
@@ -64,4 +64,4 @@ print("Financial Analysis")
 print("-------------------------")
 print(f"Total Months: {monthcount}")
 print(f"Total: ${total}")
-print(change)
+print(prevtotal)
